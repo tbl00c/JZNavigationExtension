@@ -19,6 +19,7 @@
 		40D3B0E51B3C0859009F145F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40D3B0E41B3C0859009F145F /* Images.xcassets */; };
 		40D3B0E81B3C0859009F145F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40D3B0E61B3C0859009F145F /* LaunchScreen.xib */; };
 		40D3B0FF1B3C095C009F145F /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40D3B0FE1B3C095C009F145F /* SecondViewController.m */; };
+		C219D6161FC5A9110005B117 /* UINavigationController+JZPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = C219D6141FC5A9110005B117 /* UINavigationController+JZPrivate.m */; };
 		FA1026811FAD5C260059F4E0 /* _JZ-objc-internal.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1026801FAD5C260059F4E0 /* _JZ-objc-internal.m */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,8 @@
 		40D3B0E71B3C0859009F145F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		40D3B0FD1B3C095C009F145F /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		40D3B0FE1B3C095C009F145F /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		C219D6141FC5A9110005B117 /* UINavigationController+JZPrivate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+JZPrivate.m"; sourceTree = "<group>"; };
+		C219D6151FC5A9110005B117 /* UINavigationController+JZPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+JZPrivate.h"; sourceTree = "<group>"; };
 		FA1026801FAD5C260059F4E0 /* _JZ-objc-internal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "_JZ-objc-internal.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,6 +90,8 @@
 		40695FA71CBDE4A7004F73E8 /* Private */ = {
 			isa = PBXGroup;
 			children = (
+				C219D6151FC5A9110005B117 /* UINavigationController+JZPrivate.h */,
+				C219D6141FC5A9110005B117 /* UINavigationController+JZPrivate.m */,
 				403DAA7E1DCC7C6E0054304F /* _JZNavigationDelegating.h */,
 				403DAA7F1DCC7C6E0054304F /* _JZNavigationDelegating.m */,
 				40695FA81CBDE4A7004F73E8 /* _JZ-objc-internal.h */,
@@ -227,6 +232,7 @@
 				40D3B0FF1B3C095C009F145F /* SecondViewController.m in Sources */,
 				40695FBC1CBDE4A7004F73E8 /* UINavigationController+JZExtension.m in Sources */,
 				403DAA801DCC7C6E0054304F /* _JZNavigationDelegating.m in Sources */,
+				C219D6161FC5A9110005B117 /* UINavigationController+JZPrivate.m in Sources */,
 				40695FBD1CBDE4A7004F73E8 /* UIViewController+JZExtension.m in Sources */,
 				404F89B51D1944E10076D3FB /* DemoTableViewCell.m in Sources */,
 				40D3B0DD1B3C0859009F145F /* AppDelegate.m in Sources */,

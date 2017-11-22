@@ -10,6 +10,8 @@
 
 @interface _JZNavigationDelegating : NSObject <UINavigationControllerDelegate, UIGestureRecognizerDelegate>
 
+@property (nonatomic, weak) UINavigationController *navigationController;
+
 - (instancetype)initWithNavigationController:(UINavigationController *)navigationController;
 
 @end

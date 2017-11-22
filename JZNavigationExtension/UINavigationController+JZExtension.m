@@ -22,181 +22,68 @@
 
 #import "UINavigationController+JZExtension.h"
 #import "_JZ-objc-internal.h"
-#import "_JZNavigationDelegating.h"
 #import "UIViewController+JZExtension.h"
 
 @implementation UINavigationController (JZExtension)
 
-__attribute__((constructor)) static void JZ_Inject(void) {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        
-        void (^jz_method_swizzling)(Class, SEL, SEL) = ^(Class class, SEL originalSelector, SEL swizzledSelector) {
-            
-            Method originalMethod = class_getInstanceMethod(class, originalSelector);
-            Method swizzledMethod = class_getInstanceMethod(class, swizzledSelector);
-            
-            if (class_addMethod(class, originalSelector, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod))) {
-                class_replaceMethod(class, swizzledSelector, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));
-            } else {
-                method_exchangeImplementations(originalMethod, swizzledMethod);
-            }
-            
-        };
-        
-        jz_method_swizzling([UINavigationController class], @selector(setDelegate:), @selector(jz_setDelegate:));
-        jz_method_swizzling([UINavigationController class], @selector(viewDidLoad), @selector(jz_viewDidLoad));
-        
-    });
+#pragma mark - # 全屏手势返回
+- (void)setJz_fullScreenInteractivePopGestureEnabled:(BOOL)jz_fullScreenInteractivePopGestureEnabled {
+    object_setClass(self.interactivePopGestureRecognizer, jz_fullScreenInteractivePopGestureEnabled ? [UIPanGestureRecognizer class] : [UIScreenEdgePanGestureRecognizer class]);
+}
+- (BOOL)jz_fullScreenInteractivePopGestureEnabled {
+    return [self.interactivePopGestureRecognizer isMemberOfClass:[UIPanGestureRecognizer class]];
 }
 
-- (void)jz_viewDidLoad {
-    NSAssert(!self.delegate, @"Set delegate should be invoked when viewDidLoad");
-    self.delegate = nil;
-    [self.interactivePopGestureRecognizer setValue:@NO forKey:@"canPanVertically"];
-    self.interactivePopGestureRecognizer.delegate = self.jz_navigationDelegate;
-    [self jz_viewDidLoad];
+#pragma mark - # ToolBarSize
+- (void)setJz_toolbarSize:(CGSize)jz_toolbarSize {
+    [self.toolbar setJz_size:jz_toolbarSize];
+}
+- (CGSize)jz_toolbarSize {
+    return [self.toolbar jz_size];
 }
 
-- (void)jz_setDelegate:(NSObject <UINavigationControllerDelegate> *)delegate {
-    
-    if ([self.delegate isEqual:delegate]) {
-        return;
-    }
-    
-    static NSString *_JZNavigationDelegatingTrigger = @"_JZNavigationDelegatingTrigger";
-    
-    if (![self.delegate isEqual:self.jz_navigationDelegate]) {
-        [(NSObject *)self.delegate removeObserver:self forKeyPath:_JZNavigationDelegatingTrigger context:_cmd];
-    }
-    
-    if (!delegate) {
-        
-        delegate = self.jz_navigationDelegate;
-        
-    } else {
-        
-        NSAssert([delegate isKindOfClass:[NSObject class]], @"Must inherit form NSObject!");
-        
-        [delegate addObserver:self forKeyPath:_JZNavigationDelegatingTrigger options:NSKeyValueObservingOptionNew context:_cmd];
-        
-        void (^jz_add_replace_method)(id, SEL, IMP) = ^(id object, SEL sel, IMP imp) {
-
-            Method method = class_getInstanceMethod([_JZNavigationDelegating class], sel);
-            const char *types = method_getTypeEncoding(method);
-            class_addMethod([object class], sel, imp, types);
-            class_replaceMethod(object_getClass(object), sel, method_getImplementation(method), types);
-            
-        };
-        
-        jz_add_replace_method(delegate, @selector(navigationController:willShowViewController:animated:), imp_implementationWithBlock(^{}));
-        
-    }
-    
-    [self jz_setDelegate:delegate];
-    
+#pragma mark - # NavbarSize
+- (void)setJz_navigationBarSize:(CGSize)jz_navigationBarSize {
+    [self.navigationBar setJz_size:jz_navigationBarSize];
+}
+- (CGSize)jz_navigationBarSize {
+    return [self.navigationBar jz_size];
 }
 
-
-- (void)jz_pushViewController:(UIViewController *)viewController animated:(BOOL)animated completion:(_jz_navigation_block_t)completion {
-    
-    self.jz_navigationTransitionCompletion = completion;
-    
-    [self pushViewController:viewController animated:animated];
-    
-}
-
-- (void)jz_setViewControllers:(NSArray<UIViewController *> *)viewControllers animated:(BOOL)animated completion:(_jz_navigation_block_t)completion {
-    
-    self.jz_navigationTransitionCompletion = completion;
-    
-    [self setViewControllers:viewControllers animated:animated];
-    
-}
-
-- (UIViewController *)jz_popViewControllerAnimated:(BOOL)animated completion:(_jz_navigation_block_t)completion {
-    
-    self.jz_navigationTransitionCompletion = completion;
-    
-    return [self popViewControllerAnimated:animated];
-}
-
-- (NSArray *)jz_popToViewController:(UIViewController *)viewController animated:(BOOL)animated completion:(_jz_navigation_block_t)completion {
-    
-    self.jz_navigationTransitionCompletion = completion;
-    
-    return [self popToViewController:viewController animated:animated];
-}
-
-- (NSArray *)jz_popToRootViewControllerAnimated:(BOOL)animated completion:(_jz_navigation_block_t)completion {
-    
-    self.jz_navigationTransitionCompletion = completion;
-    
-    return [self popToRootViewControllerAnimated:animated];
-}
-
-#pragma mark - setters
-
-- (void)setJz_navigationBarTransitionStyle:(JZNavigationBarTransitionStyle)jz_navigationBarTransitionStyle {
-    objc_setAssociatedObject(self, @selector(jz_navigationBarTransitionStyle), @(jz_navigationBarTransitionStyle), OBJC_ASSOCIATION_ASSIGN);
-}
-
+#pragma mark - # 导航栏背景色
 - (void)setJz_navigationBarTintColor:(UIColor *)jz_navigationBarTintColor {
     self.navigationBar.barTintColor = jz_navigationBarTintColor;
 }
-
-- (void)setJz_toolbarBackgroundAlpha:(CGFloat)jz_toolbarBackgroundAlpha {
-    [[self.toolbar jz_backgroundView] setAlpha:jz_toolbarBackgroundAlpha];
-    if (fabs(jz_toolbarBackgroundAlpha - 0) <= 0.001) {
-        [self.toolbar setShadowImage:[UIImage new] forToolbarPosition:UIBarPositionAny];
-    }
+- (UIColor *)jz_navigationBarTintColor {
+    return self.navigationBar.barTintColor;
 }
 
+#pragma mark - # 导航栏背景alpha
 - (void)setJz_navigationBarBackgroundAlpha:(CGFloat)jz_navigationBarBackgroundAlpha {
     [[self.navigationBar jz_backgroundView] setAlpha:jz_navigationBarBackgroundAlpha];
     if (fabs(jz_navigationBarBackgroundAlpha - 0) <= 0.001) {
         [self.navigationBar setShadowImage:[UIImage new]];
     }
 }
-
-- (void)setJz_navigationBarSize:(CGSize)jz_navigationBarSize {
-    [self.navigationBar setJz_size:jz_navigationBarSize];
+- (CGFloat)jz_navigationBarBackgroundAlpha {
+    return [[self.navigationBar jz_backgroundView] alpha];
 }
 
-- (void)setJz_toolbarSize:(CGSize)jz_toolbarSize {
-    [self.toolbar setJz_size:jz_toolbarSize];
+#pragma mark - # toolbar透明度
+- (void)setJz_toolbarBackgroundAlpha:(CGFloat)jz_toolbarBackgroundAlpha {
+    [[self.toolbar jz_backgroundView] setAlpha:jz_toolbarBackgroundAlpha];
+    if (fabs(jz_toolbarBackgroundAlpha - 0) <= 0.001) {
+        [self.toolbar setShadowImage:[UIImage new] forToolbarPosition:UIBarPositionAny];
+    }
+}
+- (CGFloat)jz_toolbarBackgroundAlpha {
+    return [[self.toolbar jz_backgroundView] alpha];
 }
 
-- (void)setJz_navigationTransitionCompletion:(_jz_navigation_block_t)jz_navigationTransitionCompletion {
-    objc_setAssociatedObject(self, @selector(jz_navigationTransitionCompletion), jz_navigationTransitionCompletion, OBJC_ASSOCIATION_COPY_NONATOMIC);
-}
-
-- (void)jz_setInteractivePopGestureRecognizerCompletion:(_jz_navigation_block_t)jz_interactivePopGestureRecognizerCompletion {
-    objc_setAssociatedObject(self, @selector(jz_interactivePopGestureRecognizerCompletion), jz_interactivePopGestureRecognizerCompletion, OBJC_ASSOCIATION_COPY_NONATOMIC);
-}
-
-- (void)setJz_operation:(UINavigationControllerOperation)jz_operation {
-    objc_setAssociatedObject(self, @selector(jz_operation), @(jz_operation), OBJC_ASSOCIATION_ASSIGN);
-}
-
+#pragma mark - # previousVisableVC
 - (void)setJz_previousVisibleViewController:(UIViewController * _Nullable)jz_previousVisibleViewController {
     objc_setAssociatedObject(self, @selector(jz_previousVisibleViewController), jz_previousVisibleViewController ? [_JZValue valueWithWeakObject:jz_previousVisibleViewController] : nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-
-- (void)setJz_fullScreenInteractivePopGestureEnabled:(BOOL)jz_fullScreenInteractivePopGestureEnabled {
-    object_setClass(self.interactivePopGestureRecognizer, jz_fullScreenInteractivePopGestureEnabled ? [UIPanGestureRecognizer class] : [UIScreenEdgePanGestureRecognizer class]);
-}
-
-- (void)setJz_navigationDelegate:(_JZNavigationDelegating *)jz_navigationDelegate {
-    objc_setAssociatedObject(self, @selector(jz_navigationDelegate), jz_navigationDelegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-#pragma mark - getters
-
-- (JZNavigationBarTransitionStyle)jz_navigationBarTransitionStyle {
-    return [objc_getAssociatedObject(self, _cmd) unsignedIntegerValue];
-}
-
 - (UIViewController *)jz_previousVisibleViewController {
     id _previousVisibleViewController = [objc_getAssociatedObject(self, _cmd) weakObjectValue];
     if (!_previousVisibleViewController) {
@@ -206,70 +93,46 @@ __attribute__((constructor)) static void JZ_Inject(void) {
     return _previousVisibleViewController;
 }
 
-- (UIColor *)jz_navigationBarTintColor {
-    return self.navigationBar.barTintColor;
+#pragma mark - # Push Pop
+- (void)jz_pushViewController:(UIViewController *)viewController animated:(BOOL)animated completion:(_jz_navigation_block_t)completion {
+    self.jz_navigationTransitionCompletion = completion;
+    [self pushViewController:viewController animated:animated];
 }
 
-- (UINavigationControllerOperation)jz_operation {
-    
-    UINavigationControllerOperation operation = [objc_getAssociatedObject(self, _cmd) integerValue];
-
-    if (operation == UINavigationControllerOperationNone) {
-        if ([self.viewControllers containsObject:[self.topViewController.transitionCoordinator viewControllerForKey:UITransitionContextFromViewControllerKey]]) {
-            operation = UINavigationControllerOperationPush;
-        } else {
-            operation = UINavigationControllerOperationPop;
-        }
-        self.jz_operation = operation;
-    }
-
-    return operation;
-
+- (UIViewController *)jz_popViewControllerAnimated:(BOOL)animated completion:(_jz_navigation_block_t)completion {
+    self.jz_navigationTransitionCompletion = completion;
+    return [self popViewControllerAnimated:animated];
 }
 
-- (CGFloat)jz_navigationBarBackgroundAlpha {
-    return [[self.navigationBar jz_backgroundView] alpha];
+- (NSArray *)jz_popToViewController:(UIViewController *)viewController animated:(BOOL)animated completion:(_jz_navigation_block_t)completion {
+    self.jz_navigationTransitionCompletion = completion;
+    return [self popToViewController:viewController animated:animated];
 }
 
-- (CGFloat)jz_toolbarBackgroundAlpha {
-    return [[self.toolbar jz_backgroundView] alpha];
+- (NSArray *)jz_popToRootViewControllerAnimated:(BOOL)animated completion:(_jz_navigation_block_t)completion {
+    self.jz_navigationTransitionCompletion = completion;
+    return [self popToRootViewControllerAnimated:animated];
 }
 
-- (BOOL)jz_fullScreenInteractivePopGestureEnabled {
-    return [self.interactivePopGestureRecognizer isMemberOfClass:[UIPanGestureRecognizer class]];
+- (void)jz_setViewControllers:(NSArray<UIViewController *> *)viewControllers animated:(BOOL)animated completion:(_jz_navigation_block_t)completion {
+    self.jz_navigationTransitionCompletion = completion;
+    [self setViewControllers:viewControllers animated:animated];
 }
 
+#pragma mark - # Property
+- (void)setJz_navigationTransitionCompletion:(_jz_navigation_block_t)jz_navigationTransitionCompletion {
+    objc_setAssociatedObject(self, @selector(jz_navigationTransitionCompletion), jz_navigationTransitionCompletion, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
 - (_jz_navigation_block_t)jz_navigationTransitionCompletion {
     return objc_getAssociatedObject(self, _cmd);
 }
 
+#pragma mark - # Gesture
+- (void)jz_setInteractivePopGestureRecognizerCompletion:(_jz_navigation_block_t)jz_interactivePopGestureRecognizerCompletion {
+    objc_setAssociatedObject(self, @selector(jz_interactivePopGestureRecognizerCompletion), jz_interactivePopGestureRecognizerCompletion, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
 - (_jz_navigation_block_t)jz_interactivePopGestureRecognizerCompletion {
     return objc_getAssociatedObject(self, _cmd);
-}
-
-- (CGSize)jz_navigationBarSize {
-    return [self.navigationBar jz_size];
-}
-
-- (CGSize)jz_toolbarSize {
-    return [self.toolbar jz_size];
-}
-
-- (UIViewController *)jz_previousViewControllerForViewController:(UIViewController *)viewController {
-    NSUInteger index = [self.viewControllers indexOfObject:viewController];
-    
-    if (!index || index == NSNotFound) return nil;
-    
-    return self.viewControllers[index - 1];
-}
-
-- (_JZNavigationDelegating *)jz_navigationDelegate {
-    _JZNavigationDelegating *jz_navigationDelegate = objc_getAssociatedObject(self, _cmd);
-    if (!jz_navigationDelegate) {
-        jz_navigationDelegate = [[_JZNavigationDelegating alloc] initWithNavigationController:self];
-        self.jz_navigationDelegate = jz_navigationDelegate;
-    }
-    return jz_navigationDelegate;
 }
 
 @end

@@ -26,89 +26,82 @@
 
 @implementation UIViewController (JZExtension)
 
-#pragma mark - Setter
-
-- (void)setJz_navigationBarTintColorSetterBeenCalled:(BOOL)jz_navigationBarTintColorSetterBeenCalled {
-    objc_setAssociatedObject(self, @selector(jz_hasNavigationBarTintColorSetterBeenCalled), @(jz_navigationBarTintColorSetterBeenCalled), OBJC_ASSOCIATION_ASSIGN);
+#pragma mark - # navbar可见
+- (void)setJz_wantsNavigationBarVisible:(BOOL)jz_wantsNavigationBarVisible {
+    objc_setAssociatedObject(self, @selector(jz_wantsNavigationBarVisible), @(jz_wantsNavigationBarVisible), OBJC_ASSOCIATION_ASSIGN);
+    [self.navigationController setNavigationBarHidden:!jz_wantsNavigationBarVisible animated:true];
+}
+- (BOOL)jz_wantsNavigationBarVisible {
+    NSNumber *visableNumber = objc_getAssociatedObject(self, _cmd);
+    BOOL visable = visableNumber ? [visableNumber boolValue] : YES;
+    return visable;
+}
+- (BOOL)jz_wantsNavigationBarVisibleWithNavigationController:(UINavigationController *)navigationController {
+    BOOL visable = YES;
+    NSNumber *visableNumber = objc_getAssociatedObject(self, @selector(jz_wantsNavigationBarVisible));
+    if (visableNumber) {
+        visable = [visableNumber boolValue];
+    }
+    else {
+        visable = navigationController.jz_wantsNavigationBarVisible;
+    }
+    return visable;
 }
 
-- (void)jz_setNavigationBarBackgroundHidden:(BOOL)jz_navigationBarBackgroundHidden {
-    [self setJz_navigationBarBackgroundAlpha:!jz_navigationBarBackgroundHidden];
-}
-
+#pragma mark - # navbar背景透明度
 - (void)setJz_navigationBarBackgroundAlpha:(CGFloat)jz_navigationBarBackgroundAlpha {
     [self.navigationController setJz_navigationBarBackgroundAlpha:jz_navigationBarBackgroundAlpha];
     objc_setAssociatedObject(self, @selector(jz_navigationBarBackgroundAlpha), @(jz_navigationBarBackgroundAlpha), OBJC_ASSOCIATION_RETAIN);
+}
+- (CGFloat)jz_navigationBarBackgroundAlpha {
+    NSNumber *alphaNumber = objc_getAssociatedObject(self, _cmd);
+    CGFloat alpha = alphaNumber ? [alphaNumber doubleValue] : 1.0;
+    return alpha;
+}
+
+- (CGFloat)jz_navigationBarBackgroundAlphaWithNavigationController:(UINavigationController *)navigationController {
+    CGFloat alpha = 1.0;
+    NSNumber *alphaNumber = objc_getAssociatedObject(self, @selector(jz_navigationBarBackgroundAlpha));
+    if (alphaNumber) {
+        alpha = [alphaNumber doubleValue];
+    }
+    else {
+        alpha = navigationController.jz_navigationBarBackgroundAlpha;
+    }
+    return alpha;
+}
+
+#pragma mark - # navbar背景色
+- (void)setJz_navigationBarTintColor:(UIColor *)jz_navigationBarTintColor {
+    [self.navigationController setJz_navigationBarTintColor:jz_navigationBarTintColor];
+    objc_setAssociatedObject(self, @selector(jz_navigationBarTintColor), jz_navigationBarTintColor, OBJC_ASSOCIATION_RETAIN);
+}
+- (UIColor *)jz_navigationBarTintColor {
+    UIColor *tintColor = objc_getAssociatedObject(self, _cmd);
+    return tintColor;
+}
+
+- (UIColor *)jz_navigationBarTintColorWithNavigationController:(UINavigationController *)navigationController {
+    UIColor *tintColor = objc_getAssociatedObject(self, @selector(jz_navigationBarTintColor));
+    if (!tintColor) {
+        tintColor = navigationController.jz_navigationBarTintColor;
+    }
+    return tintColor;
+}
+
+#pragma mark - # navbar背景隐藏
+- (void)jz_setNavigationBarBackgroundHidden:(BOOL)jz_navigationBarBackgroundHidden {
+    [self setJz_navigationBarBackgroundAlpha:jz_navigationBarBackgroundHidden ? 0.0f : 1.0f];
+}
+- (BOOL)jz_isNavigationBarBackgroundHidden {
+    BOOL hidden = self.jz_navigationBarBackgroundAlpha - 0.0f <= 0.0001;
+    return hidden;
 }
 
 - (void)jz_setNavigationBarBackgroundHidden:(BOOL)jz_navigationBarBackgroundHidden animated:(BOOL)animated {
     [UIView animateWithDuration:animated ? UINavigationControllerHideShowBarDuration : 0.f animations:^{
         [self jz_setNavigationBarBackgroundHidden:jz_navigationBarBackgroundHidden];
     }];
-}
-
-- (void)setJz_navigationBarTintColor:(UIColor *)jz_navigationBarTintColor {
-    self.jz_navigationBarTintColorSetterBeenCalled = true;
-    [self.navigationController setJz_navigationBarTintColor:jz_navigationBarTintColor];
-    objc_setAssociatedObject(self, @selector(jz_navigationBarTintColor), jz_navigationBarTintColor, OBJC_ASSOCIATION_RETAIN);
-}
-
-- (void)setJz_wantsNavigationBarVisible:(BOOL)jz_wantsNavigationBarVisible {
-    objc_setAssociatedObject(self, @selector(jz_wantsNavigationBarVisible), @(jz_wantsNavigationBarVisible), OBJC_ASSOCIATION_ASSIGN);
-    [self.navigationController setNavigationBarHidden:!jz_wantsNavigationBarVisible animated:true];
-}
-
-#pragma mark - Getter
-
-- (BOOL)jz_isNavigationBarBackgroundHidden {
-    return self.jz_navigationBarBackgroundAlpha - 0.0f <= 0.0001;
-}
-
-- (BOOL)jz_wantsNavigationBarVisible {
-    return [objc_getAssociatedObject(self, _cmd) boolValue];
-}
-
-- (BOOL)jz_hasNavigationBarTintColorSetterBeenCalled {
-    return [objc_getAssociatedObject(self, _cmd) boolValue];
-}
-
-- (CGFloat)jz_navigationBarBackgroundAlpha {
-    return self.navigationController ? [self jz_navigationBarBackgroundAlphaWithNavigationController:self.navigationController] : 1.f;
-}
-
-- (UIColor *)jz_navigationBarTintColor {
-    return [self jz_navigationBarTintColorWithNavigationController:self.navigationController];
-}
-
-- (UIViewController *)jz_previousViewController {
-    return self.navigationController ? [self.navigationController jz_previousViewControllerForViewController:self] : nil;
-}
-
-#pragma mark - Private
-
-- (BOOL)jz_wantsNavigationBarVisibleWithNavigationController:(UINavigationController *)navigationController {
-    id jz_wantsNavigationBarVisibleObject = objc_getAssociatedObject(self, @selector(jz_wantsNavigationBarVisible));
-    if (jz_wantsNavigationBarVisibleObject) {
-        return [jz_wantsNavigationBarVisibleObject boolValue];
-    }
-    return !navigationController.navigationBarHidden;
-}
-
-- (UIColor *)jz_navigationBarTintColorWithNavigationController:(UINavigationController *)navigationController {
-    UIColor *_navigationBarTintColor = objc_getAssociatedObject(self, @selector(jz_navigationBarTintColor));
-    if (!self.jz_hasNavigationBarTintColorSetterBeenCalled) {
-        return _navigationBarTintColor ? _navigationBarTintColor : navigationController.jz_navigationBarTintColor;
-    } else {
-        return _navigationBarTintColor;
-    }
-}
-
-- (CGFloat)jz_navigationBarBackgroundAlphaWithNavigationController:(UINavigationController *)navigationController {
-    id _navigationBarBackgroundAlpha = objc_getAssociatedObject(self, @selector(jz_navigationBarBackgroundAlpha));
-    if (_navigationBarBackgroundAlpha) {
-        return [_navigationBarBackgroundAlpha jz_CGFloatValue];
-    }
-    return navigationController.jz_navigationBarBackgroundAlpha;
 }
 
 @end

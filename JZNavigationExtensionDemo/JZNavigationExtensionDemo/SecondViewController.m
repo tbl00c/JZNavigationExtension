@@ -32,11 +32,11 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    if (self.navigationController.jz_operation == UINavigationControllerOperationPop) {
-        NSLog(@"Controller will be poped.");
-    } else if (self.navigationController.jz_operation == UINavigationControllerOperationPush) {
-        NSLog(@"Controller will push to another.");
-    }
+//    if (self.navigationController.jz_operation == UINavigationControllerOperationPop) {
+//        NSLog(@"Controller will be poped.");
+//    } else if (self.navigationController.jz_operation == UINavigationControllerOperationPush) {
+//        NSLog(@"Controller will push to another.");
+//    }
 }
 
 - (void)viewDidLoad {
