@@ -48,14 +48,14 @@
                 navigationController.jz_interactivePopGestureRecognizerCompletion(navigationController, !context.isCancelled);
             }
         }
+     
+        navigationController.jz_navigationTransitionCompletion = NULL;
+        navigationController.jz_operation = UINavigationControllerOperationNone;
+        UIViewController *viewController = navigationController.visibleViewController;
         
         if (navigationController.jz_navigationTransitionCompletion) {
             navigationController.jz_navigationTransitionCompletion(navigationController, true);
         }
-    
-        navigationController.jz_navigationTransitionCompletion = NULL;
-        navigationController.jz_operation = UINavigationControllerOperationNone;
-        
     }];
     
     if (![navigationController.delegate isEqual:navigationController.jz_navigationDelegate]) {

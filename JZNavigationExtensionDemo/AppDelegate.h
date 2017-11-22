@@ -1,9 +1,9 @@
 //
 //  AppDelegate.h
-//  JZNavigationExtensionDemo
+//  navbarTest
 //
-//  Created by Jazys on 6/25/15.
-//  Copyright (c) 2015 Jazys. All rights reserved.
+//  Created by 李伯坤 on 2017/11/10.
+//  Copyright © 2017年 李伯坤. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

@@ -34,14 +34,6 @@
     return [self.interactivePopGestureRecognizer isMemberOfClass:[UIPanGestureRecognizer class]];
 }
 
-#pragma mark - # ToolBarSize
-- (void)setJz_toolbarSize:(CGSize)jz_toolbarSize {
-    [self.toolbar setJz_size:jz_toolbarSize];
-}
-- (CGSize)jz_toolbarSize {
-    return [self.toolbar jz_size];
-}
-
 #pragma mark - # NavbarSize
 - (void)setJz_navigationBarSize:(CGSize)jz_navigationBarSize {
     [self.navigationBar setJz_size:jz_navigationBarSize];
@@ -60,24 +52,13 @@
 
 #pragma mark - # 导航栏背景alpha
 - (void)setJz_navigationBarBackgroundAlpha:(CGFloat)jz_navigationBarBackgroundAlpha {
-    [[self.navigationBar jz_backgroundView] setAlpha:jz_navigationBarBackgroundAlpha];
+    [self.navigationBar setJz_alpha:jz_navigationBarBackgroundAlpha];
     if (fabs(jz_navigationBarBackgroundAlpha - 0) <= 0.001) {
         [self.navigationBar setShadowImage:[UIImage new]];
     }
 }
 - (CGFloat)jz_navigationBarBackgroundAlpha {
-    return [[self.navigationBar jz_backgroundView] alpha];
-}
-
-#pragma mark - # toolbar透明度
-- (void)setJz_toolbarBackgroundAlpha:(CGFloat)jz_toolbarBackgroundAlpha {
-    [[self.toolbar jz_backgroundView] setAlpha:jz_toolbarBackgroundAlpha];
-    if (fabs(jz_toolbarBackgroundAlpha - 0) <= 0.001) {
-        [self.toolbar setShadowImage:[UIImage new] forToolbarPosition:UIBarPositionAny];
-    }
-}
-- (CGFloat)jz_toolbarBackgroundAlpha {
-    return [[self.toolbar jz_backgroundView] alpha];
+    return self.navigationBar.jz_alpha;
 }
 
 #pragma mark - # previousVisableVC

@@ -28,21 +28,13 @@
 @end
 
 
-@protocol JZExtensionBarProtocol <NSObject>
+@interface UINavigationBar (JZExtension)
 
 @property (nonatomic, assign) CGSize jz_size;
 
-- (UIView * _Nullable)jz_backgroundView;
-- (CGSize)jz_sizeThatFits:(CGSize)size;
+@property (nonatomic, assign) CGFloat jz_alpha;
 
 @end
 
-@interface UINavigationBar (JZExtension) <JZExtensionBarProtocol>
-
-@end
-
-@interface UIToolbar (JZExtension) <JZExtensionBarProtocol>
-
-@end
 
 #pragma clang diagnostic pop

@@ -29,14 +29,9 @@ typedef void(^_jz_navigation_block_t)(UINavigationController *navigationControll
 /// 全屏POP手势
 @property (nonatomic, assign) BOOL jz_fullScreenInteractivePopGestureEnabled;
 
-@property (nonatomic, assign) CGFloat jz_toolbarBackgroundAlpha;
-
 @property (nonatomic, weak, readonly) UIViewController *jz_previousVisibleViewController;
 
 @property (nonatomic, assign, readwrite) CGSize jz_navigationBarSize;
-
-@property (nonatomic, assign, readwrite) CGSize jz_toolbarSize;
-
 
 @property (nonatomic, copy) _jz_navigation_block_t jz_navigationTransitionCompletion;
 @property (nonatomic, copy, setter=jz_setInteractivePopGestureRecognizerCompletion:) _jz_navigation_block_t jz_interactivePopGestureRecognizerCompletion;
