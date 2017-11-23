@@ -23,7 +23,6 @@
 }
 
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
-
     BOOL wantsNavbarVisible = viewController.jz_wantsNavigationBarVisible;
     UIColor *tintColor = viewController.jz_navigationBarTintColor;
     CGFloat bgAlpha = viewController.jz_navigationBarBackgroundAlpha;
@@ -38,6 +37,7 @@
             navigationController.jz_navigationBarBackgroundAlpha = bgAlpha;
         }
     } completion:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
+        navigationController.jz_isPushing = NO;
         if (context.initiallyInteractive) {
             UIViewController *adjustViewController = navigationController.visibleViewController;
             BOOL adjust_wantsNavbarVisible = adjustViewController.jz_wantsNavigationBarVisible;
@@ -73,6 +73,11 @@
         void (*superIMP)(id _Nonnull, SEL _Nonnull, UINavigationController *, UIViewController *, BOOL) = (void *)class_getMethodImplementation(superClass, _cmd);
         superIMP(self, _cmd, navigationController, viewController, animated);
     }
+}
+
+- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    navigationController.jz_isPushing = NO;
 }
 
 #pragma mark - gestureRecognizerDelegate

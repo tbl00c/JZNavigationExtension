@@ -28,7 +28,6 @@
 		C29F12211FC6CA7A00F5B953 /* AViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29F12201FC6CA7A00F5B953 /* AViewController.m */; };
 		C29F12241FC6CA8600F5B953 /* BViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29F12231FC6CA8600F5B953 /* BViewController.m */; };
 		C29F12271FC6CA9000F5B953 /* CViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29F12261FC6CA9000F5B953 /* CViewController.m */; };
-		C29F122D1FC6D09300F5B953 /* UINavigationController+iOS11Fix.m in Sources */ = {isa = PBXBuildFile; fileRef = C29F122C1FC6D09300F5B953 /* UINavigationController+iOS11Fix.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,8 +71,6 @@
 		C29F12231FC6CA8600F5B953 /* BViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BViewController.m; sourceTree = "<group>"; };
 		C29F12251FC6CA9000F5B953 /* CViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CViewController.h; sourceTree = "<group>"; };
 		C29F12261FC6CA9000F5B953 /* CViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CViewController.m; sourceTree = "<group>"; };
-		C29F122B1FC6D09300F5B953 /* UINavigationController+iOS11Fix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+iOS11Fix.h"; sourceTree = "<group>"; };
-		C29F122C1FC6D09300F5B953 /* UINavigationController+iOS11Fix.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+iOS11Fix.m"; sourceTree = "<group>"; };
 		D8C9C4AC17591E6EF18BD337 /* libPods-JZNavigationExtensionDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JZNavigationExtensionDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F85D9A4C411B9756A7BD2907 /* Pods-JZNavigationExtensionDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JZNavigationExtensionDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-JZNavigationExtensionDemo/Pods-JZNavigationExtensionDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -150,8 +147,6 @@
 				C29F11A21FC687E200F5B953 /* UINavigationController+JZExtension.h */,
 				C29F11971FC687E200F5B953 /* UINavigationController+JZExtension.m */,
 				C29F11A31FC687E200F5B953 /* JZNavigationExtension.h */,
-				C29F122B1FC6D09300F5B953 /* UINavigationController+iOS11Fix.h */,
-				C29F122C1FC6D09300F5B953 /* UINavigationController+iOS11Fix.m */,
 			);
 			name = JZNavigationExtension;
 			path = ../../JZNavigationExtension;
@@ -358,7 +353,6 @@
 				C29F11A81FC687E300F5B953 /* UINavigationController+JZPrivate.m in Sources */,
 				C29F121C1FC6CA2A00F5B953 /* ZZCateViewController.m in Sources */,
 				C29F121B1FC6CA2A00F5B953 /* ZZMessageViewController.m in Sources */,
-				C29F122D1FC6D09300F5B953 /* UINavigationController+iOS11Fix.m in Sources */,
 				C29F11A91FC687E300F5B953 /* _JZValue.m in Sources */,
 				C29F12241FC6CA8600F5B953 /* BViewController.m in Sources */,
 				40D3B0DA1B3C0859009F145F /* main.m in Sources */,

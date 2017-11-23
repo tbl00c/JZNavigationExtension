@@ -28,6 +28,15 @@
 
 @implementation UINavigationController (JZExtension)
 
+#pragma mark - # 正在Push
+- (void)setJz_isPushing:(BOOL)jz_isPushing {
+    objc_setAssociatedObject(self, @selector(jz_isPushing), @(jz_isPushing), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+- (BOOL)jz_isPushing {
+    NSNumber *number = objc_getAssociatedObject(self, _cmd);
+    return [number boolValue];
+}
+
 #pragma mark - # 全屏手势返回
 - (void)setJz_fullScreenInteractivePopGestureEnabled:(BOOL)jz_fullScreenInteractivePopGestureEnabled {
     object_setClass(self.interactivePopGestureRecognizer, jz_fullScreenInteractivePopGestureEnabled ? [UIPanGestureRecognizer class] : [UIScreenEdgePanGestureRecognizer class]);

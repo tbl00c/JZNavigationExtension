@@ -26,6 +26,8 @@ typedef void(^_jz_navigation_block_t)(UINavigationController *navigationControll
 
 @interface UINavigationController (JZExtension)
 
+@property (nonatomic, assign) BOOL jz_isPushing;
+
 /// 全屏POP手势
 @property (nonatomic, assign) BOOL jz_fullScreenInteractivePopGestureEnabled;
 

@@ -7,6 +7,7 @@
 //
 
 #import "UINavigationController+JZPrivate.h"
+#import "UINavigationController+JZExtension.h"
 #import "_JZNavigationDelegating.h"
 #import <objc/runtime.h>
 
@@ -28,6 +29,7 @@ __attribute__((constructor)) static void JZ_Inject(void) {
         
         jz_method_swizzling([UINavigationController class], @selector(setDelegate:), @selector(jz_setDelegate:));
         jz_method_swizzling([UINavigationController class], @selector(viewDidLoad), @selector(jz_viewDidLoad));
+        jz_method_swizzling([UINavigationController class], @selector(pushViewController:animated:), @selector(jz_pushViewController:animated:));
     });
 }
 
@@ -68,6 +70,17 @@ __attribute__((constructor)) static void JZ_Inject(void) {
     [self jz_setDelegate:delegate];
 }
 
+- (void)jz_pushViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    self.jz_isPushing = YES;
+    [self jz_pushViewController:viewController animated:animated];
+    
+    // IOS11 fix
+    CGRect frame = self.tabBarController.tabBar.frame;
+    frame.origin.y = [UIScreen mainScreen].bounds.size.height - frame.size.height;
+    self.tabBarController.tabBar.frame = frame;
+}
+
 #pragma mark - # operation
 - (void)setJz_operation:(UINavigationControllerOperation)jz_operation {
     objc_setAssociatedObject(self, @selector(jz_operation), @(jz_operation), OBJC_ASSOCIATION_ASSIGN);
@@ -102,3 +115,4 @@ __attribute__((constructor)) static void JZ_Inject(void) {
 
 
 @end
+
