@@ -1,0 +1,5 @@
+platform :ios, '8.0'
+
+target 'JZNavigationExtensionDemo' do
+    pod 'TLTabBarController', :git => 'https://www.github.com/tbl00c/TLTabBarController'
+end

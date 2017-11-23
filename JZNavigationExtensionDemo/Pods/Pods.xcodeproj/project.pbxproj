@@ -1,0 +1,529 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		073155C10C4347CB91FE526533D163F9 /* UITabBar+TLExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = A16A6207D2DDDB977F4849107434A45C /* UITabBar+TLExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		353D4FC470ADB954C9DD4B949F96B92E /* TLTabBar.h in Headers */ = {isa = PBXBuildFile; fileRef = CD6773469485D6DBEC11B38998B94850 /* TLTabBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		35DCE718A215C56EDFD2BD5A07B882FB /* TLBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBF56FD1D3C79902CCBDD8AE0E6DE32 /* TLBadge.m */; };
+		4E16A3F5AB890B19D9939F269A6E0C3C /* UITabBarItem+TLPrivateExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = B88400615D0DA31AD41A753FD2939D76 /* UITabBarItem+TLPrivateExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4FD5C0F8CEF9D9335CC6D81464759F7D /* TLTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 34863F5D6C91698538AE3E04391649FE /* TLTabBar.m */; };
+		5BBC5BED3111D7CA48CC10AFC50E4836 /* TLTabBarControllerProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = E23083C8062338E04DC997D546546E8B /* TLTabBarControllerProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5C085C07019C2C82B6C63C1DFB29937D /* TLTabBarController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 777DA6A16234512DB038D4E8A50555C4 /* TLTabBarController-dummy.m */; };
+		5D43A5336808AB866069E60DFC8AC079 /* TLBadge.h in Headers */ = {isa = PBXBuildFile; fileRef = FFB74E994C6A072753A242F56F4D63C6 /* TLBadge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6304B4BB75F8D32240A904853DFB6C81 /* Pods-JZNavigationExtensionDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BB444A4CE3590CB6F653F255E2F5C50C /* Pods-JZNavigationExtensionDemo-dummy.m */; };
+		7F3B4608AC8E0B293E6B5D0D6361F5D3 /* UITabBarItem+TLPrivateExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E31B873384A211C00EACF97E49EC1A /* UITabBarItem+TLPrivateExtension.m */; };
+		9D3530E1B7C77D4870E7B2FA41482CF5 /* UITabBar+TLExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F8089929DB73226C69C6A720906E8938 /* UITabBar+TLExtension.m */; };
+		A26E78FD781B2C3DFD4D9C466722744C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		B54A7485C1FFA85D0335FD725BC81BD2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		D209E8C7415ED5D91A2BF98239EF9272 /* TLTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB233B7B441CC994EB95D9FCE61FC1D3 /* TLTabBarController.m */; };
+		D741F829AD4B4DF2554F6260A770A69B /* TLTabBarController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BB60C78F9CC34ACED7AE33B8766CA31 /* TLTabBarController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3C9715C036D775219E2EA3589E44CC7E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7C33993FEFE3E2BEDDB4BF6EA1D9D8FA;
+			remoteInfo = TLTabBarController;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		137D4542ECC6A7C8D9B95FBDF06094A2 /* Pods-JZNavigationExtensionDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JZNavigationExtensionDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		34863F5D6C91698538AE3E04391649FE /* TLTabBar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TLTabBar.m; path = TLTabBarController/Private/TLTabBar.m; sourceTree = "<group>"; };
+		41B4EF6F82FE436689BB6FF8D9EBA40E /* libPods-JZNavigationExtensionDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JZNavigationExtensionDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BB60C78F9CC34ACED7AE33B8766CA31 /* TLTabBarController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TLTabBarController.h; path = TLTabBarController/TLTabBarController.h; sourceTree = "<group>"; };
+		5D580DF79213E68D0E1E9849B29ABF60 /* TLTabBarController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TLTabBarController.xcconfig; sourceTree = "<group>"; };
+		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		6B1DD0341D1DF287B408ABD2E1885DA9 /* Pods-JZNavigationExtensionDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JZNavigationExtensionDemo-frameworks.sh"; sourceTree = "<group>"; };
+		777DA6A16234512DB038D4E8A50555C4 /* TLTabBarController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TLTabBarController-dummy.m"; sourceTree = "<group>"; };
+		93A2DCD96A15B676C1B539051BEB700A /* Pods-JZNavigationExtensionDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JZNavigationExtensionDemo.release.xcconfig"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9B6418D006B5E3DE104FEBA174B054EC /* Pods-JZNavigationExtensionDemo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JZNavigationExtensionDemo-resources.sh"; sourceTree = "<group>"; };
+		A16A6207D2DDDB977F4849107434A45C /* UITabBar+TLExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITabBar+TLExtension.h"; path = "TLTabBarController/UITabBar+TLExtension.h"; sourceTree = "<group>"; };
+		ACA8D42ED400FEE812AE25EB43600F72 /* TLTabBarController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TLTabBarController-prefix.pch"; sourceTree = "<group>"; };
+		B88400615D0DA31AD41A753FD2939D76 /* UITabBarItem+TLPrivateExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITabBarItem+TLPrivateExtension.h"; path = "TLTabBarController/Private/UITabBarItem+TLPrivateExtension.h"; sourceTree = "<group>"; };
+		BB444A4CE3590CB6F653F255E2F5C50C /* Pods-JZNavigationExtensionDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JZNavigationExtensionDemo-dummy.m"; sourceTree = "<group>"; };
+		BEBF56FD1D3C79902CCBDD8AE0E6DE32 /* TLBadge.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TLBadge.m; path = TLTabBarController/Private/TLBadge.m; sourceTree = "<group>"; };
+		C2E31B873384A211C00EACF97E49EC1A /* UITabBarItem+TLPrivateExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITabBarItem+TLPrivateExtension.m"; path = "TLTabBarController/Private/UITabBarItem+TLPrivateExtension.m"; sourceTree = "<group>"; };
+		CD6773469485D6DBEC11B38998B94850 /* TLTabBar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TLTabBar.h; path = TLTabBarController/Private/TLTabBar.h; sourceTree = "<group>"; };
+		D021E302E59EF02F6A89C42279D08F17 /* Pods-JZNavigationExtensionDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JZNavigationExtensionDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D3FF48AA413C82955322DC636BADD409 /* libTLTabBarController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTLTabBarController.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9C45E120A8D7337A4A711D2445F4619 /* Pods-JZNavigationExtensionDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JZNavigationExtensionDemo-acknowledgements.plist"; sourceTree = "<group>"; };
+		DB233B7B441CC994EB95D9FCE61FC1D3 /* TLTabBarController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TLTabBarController.m; path = TLTabBarController/TLTabBarController.m; sourceTree = "<group>"; };
+		E23083C8062338E04DC997D546546E8B /* TLTabBarControllerProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TLTabBarControllerProtocol.h; path = TLTabBarController/TLTabBarControllerProtocol.h; sourceTree = "<group>"; };
+		F8089929DB73226C69C6A720906E8938 /* UITabBar+TLExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITabBar+TLExtension.m"; path = "TLTabBarController/UITabBar+TLExtension.m"; sourceTree = "<group>"; };
+		FFB74E994C6A072753A242F56F4D63C6 /* TLBadge.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TLBadge.h; path = TLTabBarController/Private/TLBadge.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		30A1FD9F887362D876ED1408C46D24EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B54A7485C1FFA85D0335FD725BC81BD2 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CF9AB8B9596751C4F06A2FDCC38DF1A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A26E78FD781B2C3DFD4D9C466722744C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		343A0DCBD15F307331EC418F4FE06A57 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5D580DF79213E68D0E1E9849B29ABF60 /* TLTabBarController.xcconfig */,
+				777DA6A16234512DB038D4E8A50555C4 /* TLTabBarController-dummy.m */,
+				ACA8D42ED400FEE812AE25EB43600F72 /* TLTabBarController-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/TLTabBarController";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				EA6C9B9C310615A670AD75B977D0605D /* Pods */,
+				A90E4611C106CD907F9ECAF6986AE910 /* Products */,
+				DC13EDA6DDA9CEFE066F7D1152BFB581 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		A90E4611C106CD907F9ECAF6986AE910 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				41B4EF6F82FE436689BB6FF8D9EBA40E /* libPods-JZNavigationExtensionDemo.a */,
+				D3FF48AA413C82955322DC636BADD409 /* libTLTabBarController.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AE488C4AAA5CED02146CD7DDE870D9F0 /* TLTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				FFB74E994C6A072753A242F56F4D63C6 /* TLBadge.h */,
+				BEBF56FD1D3C79902CCBDD8AE0E6DE32 /* TLBadge.m */,
+				CD6773469485D6DBEC11B38998B94850 /* TLTabBar.h */,
+				34863F5D6C91698538AE3E04391649FE /* TLTabBar.m */,
+				4BB60C78F9CC34ACED7AE33B8766CA31 /* TLTabBarController.h */,
+				DB233B7B441CC994EB95D9FCE61FC1D3 /* TLTabBarController.m */,
+				E23083C8062338E04DC997D546546E8B /* TLTabBarControllerProtocol.h */,
+				A16A6207D2DDDB977F4849107434A45C /* UITabBar+TLExtension.h */,
+				F8089929DB73226C69C6A720906E8938 /* UITabBar+TLExtension.m */,
+				B88400615D0DA31AD41A753FD2939D76 /* UITabBarItem+TLPrivateExtension.h */,
+				C2E31B873384A211C00EACF97E49EC1A /* UITabBarItem+TLPrivateExtension.m */,
+				343A0DCBD15F307331EC418F4FE06A57 /* Support Files */,
+			);
+			path = TLTabBarController;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C2408B78BF6F4E1506449FF34E934AFB /* Pods-JZNavigationExtensionDemo */ = {
+			isa = PBXGroup;
+			children = (
+				D021E302E59EF02F6A89C42279D08F17 /* Pods-JZNavigationExtensionDemo-acknowledgements.markdown */,
+				D9C45E120A8D7337A4A711D2445F4619 /* Pods-JZNavigationExtensionDemo-acknowledgements.plist */,
+				BB444A4CE3590CB6F653F255E2F5C50C /* Pods-JZNavigationExtensionDemo-dummy.m */,
+				6B1DD0341D1DF287B408ABD2E1885DA9 /* Pods-JZNavigationExtensionDemo-frameworks.sh */,
+				9B6418D006B5E3DE104FEBA174B054EC /* Pods-JZNavigationExtensionDemo-resources.sh */,
+				137D4542ECC6A7C8D9B95FBDF06094A2 /* Pods-JZNavigationExtensionDemo.debug.xcconfig */,
+				93A2DCD96A15B676C1B539051BEB700A /* Pods-JZNavigationExtensionDemo.release.xcconfig */,
+			);
+			name = "Pods-JZNavigationExtensionDemo";
+			path = "Target Support Files/Pods-JZNavigationExtensionDemo";
+			sourceTree = "<group>";
+		};
+		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		DC13EDA6DDA9CEFE066F7D1152BFB581 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C2408B78BF6F4E1506449FF34E934AFB /* Pods-JZNavigationExtensionDemo */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		EA6C9B9C310615A670AD75B977D0605D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AE488C4AAA5CED02146CD7DDE870D9F0 /* TLTabBarController */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		CDE8C4928E51DC2ED3669870AA2260D6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D43A5336808AB866069E60DFC8AC079 /* TLBadge.h in Headers */,
+				353D4FC470ADB954C9DD4B949F96B92E /* TLTabBar.h in Headers */,
+				D741F829AD4B4DF2554F6260A770A69B /* TLTabBarController.h in Headers */,
+				5BBC5BED3111D7CA48CC10AFC50E4836 /* TLTabBarControllerProtocol.h in Headers */,
+				073155C10C4347CB91FE526533D163F9 /* UITabBar+TLExtension.h in Headers */,
+				4E16A3F5AB890B19D9939F269A6E0C3C /* UITabBarItem+TLPrivateExtension.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		400DB05D0F3AF9F8F5CF2AECFCE16013 /* Pods-JZNavigationExtensionDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92143CD33882C0A9F0FDB28603814C04 /* Build configuration list for PBXNativeTarget "Pods-JZNavigationExtensionDemo" */;
+			buildPhases = (
+				A94426DD84CC52CA18D1CB0B3ED137FE /* Sources */,
+				30A1FD9F887362D876ED1408C46D24EA /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A86E9228BED87185D7D4748B08C1E634 /* PBXTargetDependency */,
+			);
+			name = "Pods-JZNavigationExtensionDemo";
+			productName = "Pods-JZNavigationExtensionDemo";
+			productReference = 41B4EF6F82FE436689BB6FF8D9EBA40E /* libPods-JZNavigationExtensionDemo.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		7C33993FEFE3E2BEDDB4BF6EA1D9D8FA /* TLTabBarController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C7C5D816AAB2EC3A54544371B6F973BD /* Build configuration list for PBXNativeTarget "TLTabBarController" */;
+			buildPhases = (
+				48C4850884FF7040F7125ABEEEE572A5 /* Sources */,
+				9CF9AB8B9596751C4F06A2FDCC38DF1A /* Frameworks */,
+				CDE8C4928E51DC2ED3669870AA2260D6 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TLTabBarController;
+			productName = TLTabBarController;
+			productReference = D3FF48AA413C82955322DC636BADD409 /* libTLTabBarController.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0910;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = A90E4611C106CD907F9ECAF6986AE910 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				400DB05D0F3AF9F8F5CF2AECFCE16013 /* Pods-JZNavigationExtensionDemo */,
+				7C33993FEFE3E2BEDDB4BF6EA1D9D8FA /* TLTabBarController */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		48C4850884FF7040F7125ABEEEE572A5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35DCE718A215C56EDFD2BD5A07B882FB /* TLBadge.m in Sources */,
+				4FD5C0F8CEF9D9335CC6D81464759F7D /* TLTabBar.m in Sources */,
+				5C085C07019C2C82B6C63C1DFB29937D /* TLTabBarController-dummy.m in Sources */,
+				D209E8C7415ED5D91A2BF98239EF9272 /* TLTabBarController.m in Sources */,
+				9D3530E1B7C77D4870E7B2FA41482CF5 /* UITabBar+TLExtension.m in Sources */,
+				7F3B4608AC8E0B293E6B5D0D6361F5D3 /* UITabBarItem+TLPrivateExtension.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A94426DD84CC52CA18D1CB0B3ED137FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6304B4BB75F8D32240A904853DFB6C81 /* Pods-JZNavigationExtensionDemo-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A86E9228BED87185D7D4748B08C1E634 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TLTabBarController;
+			target = 7C33993FEFE3E2BEDDB4BF6EA1D9D8FA /* TLTabBarController */;
+			targetProxy = 3C9715C036D775219E2EA3589E44CC7E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2207EC3A8C8F92D152178532F8F6463A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D580DF79213E68D0E1E9849B29ABF60 /* TLTabBarController.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/TLTabBarController/TLTabBarController-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		34FE9531DA9AF2820790339988D5FF41 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7C50FC8927027A1F9B4C53C527673EAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93A2DCD96A15B676C1B539051BEB700A /* Pods-JZNavigationExtensionDemo.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		AE4A9A1DA01AC2C9122A6EBA9BCC37F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 137D4542ECC6A7C8D9B95FBDF06094A2 /* Pods-JZNavigationExtensionDemo.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		C104F7F091290C3D1E248192F07FE689 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		F5E087FF5B3DD2BBF9DDABDD1CA44A65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D580DF79213E68D0E1E9849B29ABF60 /* TLTabBarController.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/TLTabBarController/TLTabBarController-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C104F7F091290C3D1E248192F07FE689 /* Debug */,
+				34FE9531DA9AF2820790339988D5FF41 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92143CD33882C0A9F0FDB28603814C04 /* Build configuration list for PBXNativeTarget "Pods-JZNavigationExtensionDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE4A9A1DA01AC2C9122A6EBA9BCC37F5 /* Debug */,
+				7C50FC8927027A1F9B4C53C527673EAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C7C5D816AAB2EC3A54544371B6F973BD /* Build configuration list for PBXNativeTarget "TLTabBarController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5E087FF5B3DD2BBF9DDABDD1CA44A65 /* Debug */,
+				2207EC3A8C8F92D152178532F8F6463A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

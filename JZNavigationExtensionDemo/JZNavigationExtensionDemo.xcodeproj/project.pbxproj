@@ -7,25 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30A651BAB6FE2B87C7EC3640 /* libPods-JZNavigationExtensionDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8C9C4AC17591E6EF18BD337 /* libPods-JZNavigationExtensionDemo.a */; };
 		40D3B0DA1B3C0859009F145F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 40D3B0D91B3C0859009F145F /* main.m */; };
 		40D3B0E31B3C0859009F145F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40D3B0E11B3C0859009F145F /* Main.storyboard */; };
 		40D3B0E51B3C0859009F145F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40D3B0E41B3C0859009F145F /* Images.xcassets */; };
 		40D3B0E81B3C0859009F145F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40D3B0E61B3C0859009F145F /* LaunchScreen.xib */; };
 		C219D62E1FC5B5120005B117 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C219D6221FC5B5100005B117 /* AppDelegate.m */; };
-		C219D62F1FC5B5120005B117 /* BViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C219D6271FC5B5110005B117 /* BViewController.m */; };
-		C219D6301FC5B5120005B117 /* CViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C219D6291FC5B5110005B117 /* CViewController.m */; };
-		C219D6311FC5B5120005B117 /* DViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C219D62A1FC5B5110005B117 /* DViewController.m */; };
-		C219D6321FC5B5120005B117 /* EViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C219D62B1FC5B5110005B117 /* EViewController.m */; };
-		C219D6331FC5B5120005B117 /* AViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C219D62D1FC5B5110005B117 /* AViewController.m */; };
 		C29F11A41FC687E300F5B953 /* UINavigationController+JZExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = C29F11971FC687E200F5B953 /* UINavigationController+JZExtension.m */; };
 		C29F11A51FC687E300F5B953 /* UIViewController+JZExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = C29F11981FC687E200F5B953 /* UIViewController+JZExtension.m */; };
 		C29F11A61FC687E300F5B953 /* UINavigationBar+JZPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = C29F119A1FC687E200F5B953 /* UINavigationBar+JZPrivate.m */; };
 		C29F11A71FC687E300F5B953 /* _JZNavigationDelegating.m in Sources */ = {isa = PBXBuildFile; fileRef = C29F119B1FC687E200F5B953 /* _JZNavigationDelegating.m */; };
 		C29F11A81FC687E300F5B953 /* UINavigationController+JZPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = C29F119C1FC687E200F5B953 /* UINavigationController+JZPrivate.m */; };
 		C29F11A91FC687E300F5B953 /* _JZValue.m in Sources */ = {isa = PBXBuildFile; fileRef = C29F11A11FC687E200F5B953 /* _JZValue.m */; };
+		C29F12181FC6CA2A00F5B953 /* ZZMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29F12111FC6CA2A00F5B953 /* ZZMineViewController.m */; };
+		C29F12191FC6CA2A00F5B953 /* ZZHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29F12121FC6CA2A00F5B953 /* ZZHomeViewController.m */; };
+		C29F121A1FC6CA2A00F5B953 /* ZZPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29F12131FC6CA2A00F5B953 /* ZZPublishViewController.m */; };
+		C29F121B1FC6CA2A00F5B953 /* ZZMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29F12141FC6CA2A00F5B953 /* ZZMessageViewController.m */; };
+		C29F121C1FC6CA2A00F5B953 /* ZZCateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29F12161FC6CA2A00F5B953 /* ZZCateViewController.m */; };
+		C29F121D1FC6CA2A00F5B953 /* ZZBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29F12171FC6CA2A00F5B953 /* ZZBaseViewController.m */; };
+		C29F12211FC6CA7A00F5B953 /* AViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29F12201FC6CA7A00F5B953 /* AViewController.m */; };
+		C29F12241FC6CA8600F5B953 /* BViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29F12231FC6CA8600F5B953 /* BViewController.m */; };
+		C29F12271FC6CA9000F5B953 /* CViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29F12261FC6CA9000F5B953 /* CViewController.m */; };
+		C29F122D1FC6D09300F5B953 /* UINavigationController+iOS11Fix.m in Sources */ = {isa = PBXBuildFile; fileRef = C29F122C1FC6D09300F5B953 /* UINavigationController+iOS11Fix.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F4D98647BF415EA3D7948D2 /* Pods-JZNavigationExtensionDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JZNavigationExtensionDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JZNavigationExtensionDemo/Pods-JZNavigationExtensionDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		40D3B0D41B3C0859009F145F /* JZNavigationExtensionDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JZNavigationExtensionDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40D3B0D81B3C0859009F145F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40D3B0D91B3C0859009F145F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -33,17 +40,7 @@
 		40D3B0E41B3C0859009F145F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		40D3B0E71B3C0859009F145F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C219D6221FC5B5100005B117 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = SOURCE_ROOT; };
-		C219D6231FC5B5110005B117 /* EViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EViewController.h; sourceTree = SOURCE_ROOT; };
 		C219D6241FC5B5110005B117 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = SOURCE_ROOT; };
-		C219D6251FC5B5110005B117 /* AViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AViewController.h; sourceTree = SOURCE_ROOT; };
-		C219D6261FC5B5110005B117 /* DViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DViewController.h; sourceTree = SOURCE_ROOT; };
-		C219D6271FC5B5110005B117 /* BViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BViewController.m; sourceTree = SOURCE_ROOT; };
-		C219D6281FC5B5110005B117 /* CViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CViewController.h; sourceTree = SOURCE_ROOT; };
-		C219D6291FC5B5110005B117 /* CViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CViewController.m; sourceTree = SOURCE_ROOT; };
-		C219D62A1FC5B5110005B117 /* DViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DViewController.m; sourceTree = SOURCE_ROOT; };
-		C219D62B1FC5B5110005B117 /* EViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EViewController.m; sourceTree = SOURCE_ROOT; };
-		C219D62C1FC5B5110005B117 /* BViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BViewController.h; sourceTree = SOURCE_ROOT; };
-		C219D62D1FC5B5110005B117 /* AViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AViewController.m; sourceTree = SOURCE_ROOT; };
 		C29F11961FC687E200F5B953 /* UIViewController+JZExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JZExtension.h"; sourceTree = "<group>"; };
 		C29F11971FC687E200F5B953 /* UINavigationController+JZExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+JZExtension.m"; sourceTree = "<group>"; };
 		C29F11981FC687E200F5B953 /* UIViewController+JZExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JZExtension.m"; sourceTree = "<group>"; };
@@ -57,6 +54,28 @@
 		C29F11A11FC687E200F5B953 /* _JZValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _JZValue.m; sourceTree = "<group>"; };
 		C29F11A21FC687E200F5B953 /* UINavigationController+JZExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+JZExtension.h"; sourceTree = "<group>"; };
 		C29F11A31FC687E200F5B953 /* JZNavigationExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZNavigationExtension.h; sourceTree = "<group>"; };
+		C29F120B1FC6CA2A00F5B953 /* ZZBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZBaseViewController.h; sourceTree = "<group>"; };
+		C29F120D1FC6CA2A00F5B953 /* ZZHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZHomeViewController.h; sourceTree = "<group>"; };
+		C29F120E1FC6CA2A00F5B953 /* ZZPublishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZPublishViewController.h; sourceTree = "<group>"; };
+		C29F120F1FC6CA2A00F5B953 /* ZZMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZMessageViewController.h; sourceTree = "<group>"; };
+		C29F12101FC6CA2A00F5B953 /* ZZCateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZCateViewController.h; sourceTree = "<group>"; };
+		C29F12111FC6CA2A00F5B953 /* ZZMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZMineViewController.m; sourceTree = "<group>"; };
+		C29F12121FC6CA2A00F5B953 /* ZZHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZHomeViewController.m; sourceTree = "<group>"; };
+		C29F12131FC6CA2A00F5B953 /* ZZPublishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZPublishViewController.m; sourceTree = "<group>"; };
+		C29F12141FC6CA2A00F5B953 /* ZZMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZMessageViewController.m; sourceTree = "<group>"; };
+		C29F12151FC6CA2A00F5B953 /* ZZMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZMineViewController.h; sourceTree = "<group>"; };
+		C29F12161FC6CA2A00F5B953 /* ZZCateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZCateViewController.m; sourceTree = "<group>"; };
+		C29F12171FC6CA2A00F5B953 /* ZZBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZBaseViewController.m; sourceTree = "<group>"; };
+		C29F121F1FC6CA7A00F5B953 /* AViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AViewController.h; sourceTree = "<group>"; };
+		C29F12201FC6CA7A00F5B953 /* AViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AViewController.m; sourceTree = "<group>"; };
+		C29F12221FC6CA8600F5B953 /* BViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BViewController.h; sourceTree = "<group>"; };
+		C29F12231FC6CA8600F5B953 /* BViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BViewController.m; sourceTree = "<group>"; };
+		C29F12251FC6CA9000F5B953 /* CViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CViewController.h; sourceTree = "<group>"; };
+		C29F12261FC6CA9000F5B953 /* CViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CViewController.m; sourceTree = "<group>"; };
+		C29F122B1FC6D09300F5B953 /* UINavigationController+iOS11Fix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+iOS11Fix.h"; sourceTree = "<group>"; };
+		C29F122C1FC6D09300F5B953 /* UINavigationController+iOS11Fix.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+iOS11Fix.m"; sourceTree = "<group>"; };
+		D8C9C4AC17591E6EF18BD337 /* libPods-JZNavigationExtensionDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JZNavigationExtensionDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F85D9A4C411B9756A7BD2907 /* Pods-JZNavigationExtensionDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JZNavigationExtensionDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-JZNavigationExtensionDemo/Pods-JZNavigationExtensionDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30A651BAB6FE2B87C7EC3640 /* libPods-JZNavigationExtensionDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +95,8 @@
 			children = (
 				40D3B0D61B3C0859009F145F /* JZNavigationExtensionDemo */,
 				40D3B0D51B3C0859009F145F /* Products */,
+				44C339F149A7C235124D6018 /* Pods */,
+				F559A3D90774FA157049D883 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,18 +112,9 @@
 			isa = PBXGroup;
 			children = (
 				C29F11951FC687E200F5B953 /* JZNavigationExtension */,
+				C29F120A1FC6CA2A00F5B953 /* JZNavigationExtensionDemo */,
 				C219D6241FC5B5110005B117 /* AppDelegate.h */,
 				C219D6221FC5B5100005B117 /* AppDelegate.m */,
-				C219D6251FC5B5110005B117 /* AViewController.h */,
-				C219D62D1FC5B5110005B117 /* AViewController.m */,
-				C219D62C1FC5B5110005B117 /* BViewController.h */,
-				C219D6271FC5B5110005B117 /* BViewController.m */,
-				C219D6281FC5B5110005B117 /* CViewController.h */,
-				C219D6291FC5B5110005B117 /* CViewController.m */,
-				C219D6261FC5B5110005B117 /* DViewController.h */,
-				C219D62A1FC5B5110005B117 /* DViewController.m */,
-				C219D6231FC5B5110005B117 /* EViewController.h */,
-				C219D62B1FC5B5110005B117 /* EViewController.m */,
 				40D3B0D71B3C0859009F145F /* Supporting Files */,
 			);
 			path = JZNavigationExtensionDemo;
@@ -119,6 +132,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		44C339F149A7C235124D6018 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3F4D98647BF415EA3D7948D2 /* Pods-JZNavigationExtensionDemo.debug.xcconfig */,
+				F85D9A4C411B9756A7BD2907 /* Pods-JZNavigationExtensionDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C29F11951FC687E200F5B953 /* JZNavigationExtension */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +150,8 @@
 				C29F11A21FC687E200F5B953 /* UINavigationController+JZExtension.h */,
 				C29F11971FC687E200F5B953 /* UINavigationController+JZExtension.m */,
 				C29F11A31FC687E200F5B953 /* JZNavigationExtension.h */,
+				C29F122B1FC6D09300F5B953 /* UINavigationController+iOS11Fix.h */,
+				C29F122C1FC6D09300F5B953 /* UINavigationController+iOS11Fix.m */,
 			);
 			name = JZNavigationExtension;
 			path = ../../JZNavigationExtension;
@@ -136,16 +160,65 @@
 		C29F11991FC687E200F5B953 /* Private */ = {
 			isa = PBXGroup;
 			children = (
+				C29F119F1FC687E200F5B953 /* UINavigationController+JZPrivate.h */,
+				C29F119C1FC687E200F5B953 /* UINavigationController+JZPrivate.m */,
 				C29F119E1FC687E200F5B953 /* UINavigationBar+JZPrivate.h */,
 				C29F119A1FC687E200F5B953 /* UINavigationBar+JZPrivate.m */,
 				C29F11A01FC687E200F5B953 /* _JZNavigationDelegating.h */,
 				C29F119B1FC687E200F5B953 /* _JZNavigationDelegating.m */,
-				C29F119F1FC687E200F5B953 /* UINavigationController+JZPrivate.h */,
-				C29F119C1FC687E200F5B953 /* UINavigationController+JZPrivate.m */,
 				C29F119D1FC687E200F5B953 /* _JZValue.h */,
 				C29F11A11FC687E200F5B953 /* _JZValue.m */,
 			);
 			path = Private;
+			sourceTree = "<group>";
+		};
+		C29F120A1FC6CA2A00F5B953 /* JZNavigationExtensionDemo */ = {
+			isa = PBXGroup;
+			children = (
+				C29F120B1FC6CA2A00F5B953 /* ZZBaseViewController.h */,
+				C29F12171FC6CA2A00F5B953 /* ZZBaseViewController.m */,
+				C29F121E1FC6CA6000F5B953 /* TestVC */,
+				C29F120C1FC6CA2A00F5B953 /* RootVC */,
+			);
+			path = JZNavigationExtensionDemo;
+			sourceTree = "<group>";
+		};
+		C29F120C1FC6CA2A00F5B953 /* RootVC */ = {
+			isa = PBXGroup;
+			children = (
+				C29F120D1FC6CA2A00F5B953 /* ZZHomeViewController.h */,
+				C29F12121FC6CA2A00F5B953 /* ZZHomeViewController.m */,
+				C29F12101FC6CA2A00F5B953 /* ZZCateViewController.h */,
+				C29F12161FC6CA2A00F5B953 /* ZZCateViewController.m */,
+				C29F120E1FC6CA2A00F5B953 /* ZZPublishViewController.h */,
+				C29F12131FC6CA2A00F5B953 /* ZZPublishViewController.m */,
+				C29F120F1FC6CA2A00F5B953 /* ZZMessageViewController.h */,
+				C29F12141FC6CA2A00F5B953 /* ZZMessageViewController.m */,
+				C29F12151FC6CA2A00F5B953 /* ZZMineViewController.h */,
+				C29F12111FC6CA2A00F5B953 /* ZZMineViewController.m */,
+			);
+			path = RootVC;
+			sourceTree = "<group>";
+		};
+		C29F121E1FC6CA6000F5B953 /* TestVC */ = {
+			isa = PBXGroup;
+			children = (
+				C29F121F1FC6CA7A00F5B953 /* AViewController.h */,
+				C29F12201FC6CA7A00F5B953 /* AViewController.m */,
+				C29F12221FC6CA8600F5B953 /* BViewController.h */,
+				C29F12231FC6CA8600F5B953 /* BViewController.m */,
+				C29F12251FC6CA9000F5B953 /* CViewController.h */,
+				C29F12261FC6CA9000F5B953 /* CViewController.m */,
+			);
+			path = TestVC;
+			sourceTree = "<group>";
+		};
+		F559A3D90774FA157049D883 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D8C9C4AC17591E6EF18BD337 /* libPods-JZNavigationExtensionDemo.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,9 +228,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 40D3B0F71B3C0859009F145F /* Build configuration list for PBXNativeTarget "JZNavigationExtensionDemo" */;
 			buildPhases = (
+				FAB76691AD9E7052712D483F /* [CP] Check Pods Manifest.lock */,
 				40D3B0D01B3C0859009F145F /* Sources */,
 				40D3B0D11B3C0859009F145F /* Frameworks */,
 				40D3B0D21B3C0859009F145F /* Resources */,
+				B8F3FD4AE2816B40FD086E9F /* [CP] Embed Pods Frameworks */,
+				18ABBC7C1DA5AC3CF91FE9AC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -174,7 +250,7 @@
 		40D3B0CC1B3C0859009F145F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = Jazys;
 				TargetAttributes = {
 					40D3B0D31B3C0859009F145F = {
@@ -216,22 +292,75 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		18ABBC7C1DA5AC3CF91FE9AC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JZNavigationExtensionDemo/Pods-JZNavigationExtensionDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8F3FD4AE2816B40FD086E9F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JZNavigationExtensionDemo/Pods-JZNavigationExtensionDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FAB76691AD9E7052712D483F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		40D3B0D01B3C0859009F145F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C219D6331FC5B5120005B117 /* AViewController.m in Sources */,
-				C219D6301FC5B5120005B117 /* CViewController.m in Sources */,
 				C29F11A51FC687E300F5B953 /* UIViewController+JZExtension.m in Sources */,
-				C219D6321FC5B5120005B117 /* EViewController.m in Sources */,
-				C219D62F1FC5B5120005B117 /* BViewController.m in Sources */,
-				C219D6311FC5B5120005B117 /* DViewController.m in Sources */,
 				C29F11A41FC687E300F5B953 /* UINavigationController+JZExtension.m in Sources */,
+				C29F12181FC6CA2A00F5B953 /* ZZMineViewController.m in Sources */,
+				C29F121D1FC6CA2A00F5B953 /* ZZBaseViewController.m in Sources */,
+				C29F12271FC6CA9000F5B953 /* CViewController.m in Sources */,
+				C29F12191FC6CA2A00F5B953 /* ZZHomeViewController.m in Sources */,
 				C29F11A61FC687E300F5B953 /* UINavigationBar+JZPrivate.m in Sources */,
+				C29F12211FC6CA7A00F5B953 /* AViewController.m in Sources */,
 				C29F11A71FC687E300F5B953 /* _JZNavigationDelegating.m in Sources */,
+				C29F121A1FC6CA2A00F5B953 /* ZZPublishViewController.m in Sources */,
 				C29F11A81FC687E300F5B953 /* UINavigationController+JZPrivate.m in Sources */,
+				C29F121C1FC6CA2A00F5B953 /* ZZCateViewController.m in Sources */,
+				C29F121B1FC6CA2A00F5B953 /* ZZMessageViewController.m in Sources */,
+				C29F122D1FC6D09300F5B953 /* UINavigationController+iOS11Fix.m in Sources */,
 				C29F11A91FC687E300F5B953 /* _JZValue.m in Sources */,
+				C29F12241FC6CA8600F5B953 /* BViewController.m in Sources */,
 				40D3B0DA1B3C0859009F145F /* main.m in Sources */,
 				C219D62E1FC5B5120005B117 /* AppDelegate.m in Sources */,
 			);
@@ -267,13 +396,21 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -312,13 +449,21 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -344,6 +489,7 @@
 		};
 		40D3B0F81B3C0859009F145F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F4D98647BF415EA3D7948D2 /* Pods-JZNavigationExtensionDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -353,7 +499,7 @@
 				DEVELOPMENT_TEAM = 8ZE6MPGQ6N;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				INFOPLIST_FILE = JZNavigationExtensionDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lbk.jz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -364,6 +510,7 @@
 		};
 		40D3B0F91B3C0859009F145F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F85D9A4C411B9756A7BD2907 /* Pods-JZNavigationExtensionDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -373,7 +520,7 @@
 				DEVELOPMENT_TEAM = 8ZE6MPGQ6N;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				INFOPLIST_FILE = JZNavigationExtensionDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lbk.jz;
 				PRODUCT_NAME = "$(TARGET_NAME)";

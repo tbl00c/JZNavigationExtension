@@ -7,7 +7,13 @@
 //
 
 #import "AppDelegate.h"
-#import "AViewController.h"
+#import <TLTabBarController.h>
+#import "ZZHomeViewController.h"
+#import "ZZCateViewController.h"
+#import "ZZPublishViewController.h"
+#import "ZZMessageViewController.h"
+#import "ZZMineViewController.h"
+
 
 @interface AppDelegate ()
 
@@ -19,10 +25,26 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self.window makeKeyAndVisible];
     
-    AViewController *vc = [[AViewController alloc] init];
-    UINavigationController *navC = [[UINavigationController alloc] initWithRootViewController:vc];
-    [self.window addSubview:navC.view];
-    [self.window setRootViewController:navC];
+    
+    TLTabBarController *tabBarVC = [[TLTabBarController alloc] init];
+    [tabBarVC.tabBar setPlusButtonImageOffset:10];
+    
+    [tabBarVC addChildViewController:[[UINavigationController alloc] initWithRootViewController:[ZZHomeViewController new]]];
+    [tabBarVC addChildViewController:[[UINavigationController alloc] initWithRootViewController:[ZZCateViewController new]]];
+    
+    UITabBarItem *item = [[UITabBarItem alloc] initWithTitle:nil
+                                                       image:[[UIImage imageNamed:@"tab_willsell"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
+                                               selectedImage:[[UIImage imageNamed:@"tab_willsell"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    [tabBarVC addPlusItemWithSystemTabBarItem:item actionBlock:^{
+        UIViewController *vc = [[UINavigationController alloc] initWithRootViewController:[ZZPublishViewController new]];
+        [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:vc animated:YES completion:nil];
+    }];
+    
+    [tabBarVC addChildViewController:[[UINavigationController alloc] initWithRootViewController:[ZZMessageViewController new]]];
+    [tabBarVC addChildViewController:[[UINavigationController alloc] initWithRootViewController:[ZZMineViewController new]]];
+
+    [self.window addSubview:tabBarVC.view];
+    [self.window setRootViewController:tabBarVC];
 
     return YES;
 }

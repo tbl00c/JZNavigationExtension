@@ -1,0 +1,21 @@
+PODS:
+  - TLTabBarController (0.0.1)
+
+DEPENDENCIES:
+  - TLTabBarController (from `https://www.github.com/tbl00c/TLTabBarController`)
+
+EXTERNAL SOURCES:
+  TLTabBarController:
+    :git: https://www.github.com/tbl00c/TLTabBarController
+
+CHECKOUT OPTIONS:
+  TLTabBarController:
+    :commit: 6f21a9fc8bd69968b5f960eb11a53bc5453df04e
+    :git: https://www.github.com/tbl00c/TLTabBarController
+
+SPEC CHECKSUMS:
+  TLTabBarController: 149a3df6517408d72e506c4c578b6758744e9251
+
+PODFILE CHECKSUM: 7365d375f8b54818098f5068d3bdef689a14a4e0
+
+COCOAPODS: 1.2.1
