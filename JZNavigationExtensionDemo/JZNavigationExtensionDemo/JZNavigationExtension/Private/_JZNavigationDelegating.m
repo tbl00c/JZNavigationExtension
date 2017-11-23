@@ -7,9 +7,11 @@
 //
 
 #import "_JZNavigationDelegating.h"
-#import "_JZ-objc-internal.h"
 #import "UIViewController+JZExtension.h"
 #import "UINavigationController+JZExtension.h"
+#import "UINavigationController+JZPrivate.h"
+#import "_JZValue.h"
+#import <objc/runtime.h>
 
 @implementation _JZNavigationDelegating
 
@@ -25,10 +27,12 @@
     
     id<UIViewControllerTransitionCoordinator> transitionCoordinator = navigationController.topViewController.transitionCoordinator;
     
-    [navigationController setNavigationBarHidden:![viewController jz_wantsNavigationBarVisibleWithNavigationController:navigationController] animated:animated];
+    [navigationController setNavigationBarHidden:!viewController.jz_wantsNavigationBarVisible animated:animated];
     void (^animateAlongsideTransition)(id <UIViewControllerTransitionCoordinatorContext>) = ^(id<UIViewControllerTransitionCoordinatorContext> context) {
-        navigationController.jz_navigationBarTintColor = [viewController jz_navigationBarTintColorWithNavigationController:navigationController];
-        navigationController.jz_navigationBarBackgroundAlpha = [viewController jz_navigationBarBackgroundAlphaWithNavigationController:navigationController];
+        if (viewController.jz_navigationBarTintColor) {
+            navigationController.jz_navigationBarTintColor = viewController.jz_navigationBarTintColor;
+        }
+        navigationController.jz_navigationBarBackgroundAlpha = viewController.jz_navigationBarBackgroundAlpha;
     };
 
     [transitionCoordinator animateAlongsideTransition:animateAlongsideTransition completion:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
@@ -36,12 +40,13 @@
         if (context.initiallyInteractive) {
             UIViewController *adjustViewController = navigationController.visibleViewController;
             if (context.isCancelled) {
-                UIColor *newNavigationBarColor = [adjustViewController jz_navigationBarTintColorWithNavigationController:navigationController];
-                navigationController.jz_navigationBarTintColor = newNavigationBarColor;
-                navigationController.jz_navigationBarBackgroundAlpha = [adjustViewController jz_navigationBarBackgroundAlphaWithNavigationController:navigationController];
+                if (adjustViewController.jz_navigationBarTintColor) {
+                    navigationController.jz_navigationBarTintColor = adjustViewController.jz_navigationBarTintColor;
+                }
+                navigationController.jz_navigationBarBackgroundAlpha = adjustViewController.jz_navigationBarBackgroundAlpha;
             }
             else {
-                [navigationController setNavigationBarHidden:![adjustViewController jz_wantsNavigationBarVisibleWithNavigationController:navigationController] animated:animated];
+                [navigationController setNavigationBarHidden:!adjustViewController.jz_wantsNavigationBarVisible animated:animated];
             }
             
             if (navigationController.jz_interactivePopGestureRecognizerCompletion){
@@ -51,7 +56,6 @@
      
         navigationController.jz_navigationTransitionCompletion = NULL;
         navigationController.jz_operation = UINavigationControllerOperationNone;
-        UIViewController *viewController = navigationController.visibleViewController;
         
         if (navigationController.jz_navigationTransitionCompletion) {
             navigationController.jz_navigationTransitionCompletion(navigationController, true);

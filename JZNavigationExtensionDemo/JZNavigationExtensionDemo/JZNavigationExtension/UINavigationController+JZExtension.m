@@ -21,8 +21,10 @@
 // SOFTWARE.
 
 #import "UINavigationController+JZExtension.h"
-#import "_JZ-objc-internal.h"
 #import "UIViewController+JZExtension.h"
+#import "UINavigationBar+JZPrivate.h"
+#import <objc/runtime.h>
+#import "_JZValue.h"
 
 @implementation UINavigationController (JZExtension)
 
@@ -44,10 +46,10 @@
 
 #pragma mark - # 导航栏背景色
 - (void)setJz_navigationBarTintColor:(UIColor *)jz_navigationBarTintColor {
-    self.navigationBar.barTintColor = jz_navigationBarTintColor;
+    self.navigationBar.jz_barTintColor = jz_navigationBarTintColor;
 }
 - (UIColor *)jz_navigationBarTintColor {
-    return self.navigationBar.barTintColor;
+    return self.navigationBar.jz_barTintColor;
 }
 
 #pragma mark - # 导航栏背景alpha

@@ -21,8 +21,8 @@
 // SOFTWARE.
 
 #import "UIViewController+JZExtension.h"
-#import "_JZ-objc-internal.h"
 #import "UINavigationController+JZExtension.h"
+#import <objc/runtime.h>
 
 @implementation UIViewController (JZExtension)
 
@@ -34,17 +34,6 @@
 - (BOOL)jz_wantsNavigationBarVisible {
     NSNumber *visableNumber = objc_getAssociatedObject(self, _cmd);
     BOOL visable = visableNumber ? [visableNumber boolValue] : YES;
-    return visable;
-}
-- (BOOL)jz_wantsNavigationBarVisibleWithNavigationController:(UINavigationController *)navigationController {
-    BOOL visable = YES;
-    NSNumber *visableNumber = objc_getAssociatedObject(self, @selector(jz_wantsNavigationBarVisible));
-    if (visableNumber) {
-        visable = [visableNumber boolValue];
-    }
-    else {
-        visable = navigationController.jz_wantsNavigationBarVisible;
-    }
     return visable;
 }
 
@@ -59,18 +48,6 @@
     return alpha;
 }
 
-- (CGFloat)jz_navigationBarBackgroundAlphaWithNavigationController:(UINavigationController *)navigationController {
-    CGFloat alpha = 1.0;
-    NSNumber *alphaNumber = objc_getAssociatedObject(self, @selector(jz_navigationBarBackgroundAlpha));
-    if (alphaNumber) {
-        alpha = [alphaNumber doubleValue];
-    }
-    else {
-        alpha = navigationController.jz_navigationBarBackgroundAlpha;
-    }
-    return alpha;
-}
-
 #pragma mark - # navbar背景色
 - (void)setJz_navigationBarTintColor:(UIColor *)jz_navigationBarTintColor {
     [self.navigationController setJz_navigationBarTintColor:jz_navigationBarTintColor];
@@ -78,14 +55,6 @@
 }
 - (UIColor *)jz_navigationBarTintColor {
     UIColor *tintColor = objc_getAssociatedObject(self, _cmd);
-    return tintColor;
-}
-
-- (UIColor *)jz_navigationBarTintColorWithNavigationController:(UINavigationController *)navigationController {
-    UIColor *tintColor = objc_getAssociatedObject(self, @selector(jz_navigationBarTintColor));
-    if (!tintColor) {
-        tintColor = navigationController.jz_navigationBarTintColor;
-    }
     return tintColor;
 }
 
