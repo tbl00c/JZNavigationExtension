@@ -23,11 +23,14 @@
 
 #pragma mark - # 背景透明度
 - (void)setJz_alpha:(CGFloat)alpha {
-    UIView *bgView = [self valueForKey:@"_backgroundView"];
-    [bgView setAlpha:alpha];
-    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 11.0f) {
-        bgView = [bgView valueForKey:@"_backgroundEffectView"];
-        [bgView setAlpha:alpha];
+    UIView *barBackgroundView = [self valueForKey:@"_backgroundView"];
+    if (@available(iOS 11.0, *)) {
+        for (UIView *view in barBackgroundView.subviews) {
+            view.alpha = alpha;
+        }
+    }
+    else {
+        barBackgroundView.alpha = alpha;
     }
 }
 - (CGFloat)jz_alpha {

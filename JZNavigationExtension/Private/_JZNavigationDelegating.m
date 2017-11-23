@@ -23,30 +23,36 @@
 }
 
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
-    NSLog(@"will show %@", [viewController description]);
-    
-    id<UIViewControllerTransitionCoordinator> transitionCoordinator = navigationController.topViewController.transitionCoordinator;
-    
-    [navigationController setNavigationBarHidden:!viewController.jz_wantsNavigationBarVisible animated:animated];
-    void (^animateAlongsideTransition)(id <UIViewControllerTransitionCoordinatorContext>) = ^(id<UIViewControllerTransitionCoordinatorContext> context) {
-        if (viewController.jz_navigationBarTintColor) {
-            navigationController.jz_navigationBarTintColor = viewController.jz_navigationBarTintColor;
-        }
-        navigationController.jz_navigationBarBackgroundAlpha = viewController.jz_navigationBarBackgroundAlpha;
-    };
 
-    [transitionCoordinator animateAlongsideTransition:animateAlongsideTransition completion:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
+    BOOL wantsNavbarVisible = viewController.jz_wantsNavigationBarVisible;
+    UIColor *tintColor = viewController.jz_navigationBarTintColor;
+    CGFloat bgAlpha = viewController.jz_navigationBarBackgroundAlpha;
     
+    [navigationController setNavigationBarHidden:!wantsNavbarVisible animated:animated];
+    id<UIViewControllerTransitionCoordinator> transitionCoordinator = navigationController.topViewController.transitionCoordinator;
+    [transitionCoordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
+        if (wantsNavbarVisible) {
+            if (tintColor) {
+                navigationController.jz_navigationBarTintColor = tintColor;
+            }
+            navigationController.jz_navigationBarBackgroundAlpha = bgAlpha;
+        }
+    } completion:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
         if (context.initiallyInteractive) {
             UIViewController *adjustViewController = navigationController.visibleViewController;
+            BOOL adjust_wantsNavbarVisible = adjustViewController.jz_wantsNavigationBarVisible;
+            UIColor *adjust_tintColor = adjustViewController.jz_navigationBarTintColor;
+            CGFloat adjust_bgAlpha = adjustViewController.jz_navigationBarBackgroundAlpha;
             if (context.isCancelled) {
-                if (adjustViewController.jz_navigationBarTintColor) {
-                    navigationController.jz_navigationBarTintColor = adjustViewController.jz_navigationBarTintColor;
+                if (adjust_wantsNavbarVisible) {
+                    if (adjust_tintColor) {
+                        navigationController.jz_navigationBarTintColor = adjust_tintColor;
+                    }
+                    navigationController.jz_navigationBarBackgroundAlpha = adjust_bgAlpha;
                 }
-                navigationController.jz_navigationBarBackgroundAlpha = adjustViewController.jz_navigationBarBackgroundAlpha;
             }
             else {
-                [navigationController setNavigationBarHidden:!adjustViewController.jz_wantsNavigationBarVisible animated:animated];
+                [navigationController setNavigationBarHidden:!adjust_wantsNavbarVisible animated:animated];
             }
             
             if (navigationController.jz_interactivePopGestureRecognizerCompletion){
