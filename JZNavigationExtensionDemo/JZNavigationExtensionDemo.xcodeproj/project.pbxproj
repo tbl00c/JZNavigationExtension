@@ -13,6 +13,7 @@
 		40D3B0E51B3C0859009F145F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40D3B0E41B3C0859009F145F /* Images.xcassets */; };
 		40D3B0E81B3C0859009F145F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40D3B0E61B3C0859009F145F /* LaunchScreen.xib */; };
 		C219D62E1FC5B5120005B117 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C219D6221FC5B5100005B117 /* AppDelegate.m */; };
+		C26EA4561FC7FB670095ECA3 /* NSObject+JZPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = C26EA4551FC7FB670095ECA3 /* NSObject+JZPrivate.m */; };
 		C29F11A41FC687E300F5B953 /* UINavigationController+JZExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = C29F11971FC687E200F5B953 /* UINavigationController+JZExtension.m */; };
 		C29F11A51FC687E300F5B953 /* UIViewController+JZExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = C29F11981FC687E200F5B953 /* UIViewController+JZExtension.m */; };
 		C29F11A61FC687E300F5B953 /* UINavigationBar+JZPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = C29F119A1FC687E200F5B953 /* UINavigationBar+JZPrivate.m */; };
@@ -40,6 +41,8 @@
 		40D3B0E71B3C0859009F145F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C219D6221FC5B5100005B117 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = SOURCE_ROOT; };
 		C219D6241FC5B5110005B117 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = SOURCE_ROOT; };
+		C26EA4541FC7FB670095ECA3 /* NSObject+JZPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JZPrivate.h"; sourceTree = "<group>"; };
+		C26EA4551FC7FB670095ECA3 /* NSObject+JZPrivate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+JZPrivate.m"; sourceTree = "<group>"; };
 		C29F11961FC687E200F5B953 /* UIViewController+JZExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JZExtension.h"; sourceTree = "<group>"; };
 		C29F11971FC687E200F5B953 /* UINavigationController+JZExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+JZExtension.m"; sourceTree = "<group>"; };
 		C29F11981FC687E200F5B953 /* UIViewController+JZExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JZExtension.m"; sourceTree = "<group>"; };
@@ -161,6 +164,8 @@
 				C29F119A1FC687E200F5B953 /* UINavigationBar+JZPrivate.m */,
 				C29F11A01FC687E200F5B953 /* _JZNavigationDelegating.h */,
 				C29F119B1FC687E200F5B953 /* _JZNavigationDelegating.m */,
+				C26EA4541FC7FB670095ECA3 /* NSObject+JZPrivate.h */,
+				C26EA4551FC7FB670095ECA3 /* NSObject+JZPrivate.m */,
 				C29F119D1FC687E200F5B953 /* _JZValue.h */,
 				C29F11A11FC687E200F5B953 /* _JZValue.m */,
 			);
@@ -355,6 +360,7 @@
 				C29F121B1FC6CA2A00F5B953 /* ZZMessageViewController.m in Sources */,
 				C29F11A91FC687E300F5B953 /* _JZValue.m in Sources */,
 				C29F12241FC6CA8600F5B953 /* BViewController.m in Sources */,
+				C26EA4561FC7FB670095ECA3 /* NSObject+JZPrivate.m in Sources */,
 				40D3B0DA1B3C0859009F145F /* main.m in Sources */,
 				C219D62E1FC5B5120005B117 /* AppDelegate.m in Sources */,
 			);
