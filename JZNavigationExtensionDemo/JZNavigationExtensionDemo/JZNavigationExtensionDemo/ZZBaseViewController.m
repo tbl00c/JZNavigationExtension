@@ -48,11 +48,15 @@
         [vc setStepArray:[self.stepArray subarrayWithRange:NSMakeRange(1, self.stepArray.count - 1)]];
     }
     [vc setHidesBottomBarWhenPushed:YES];
-    [self.navigationController pushViewController:vc animated:YES];
+    [self.navigationController jz_pushViewController:vc animated:YES completion:^(UINavigationController *navigationController, BOOL finished) {
+        NSLog(@"push finished");
+    }];
 }
 
 - (void)pop {
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController jz_popViewControllerAnimated:YES completion:^(UINavigationController *navigationController, BOOL finished) {
+        NSLog(@"pop finfished");
+    }];
 }
 
 @end

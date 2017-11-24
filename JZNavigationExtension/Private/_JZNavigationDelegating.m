@@ -1,6 +1,6 @@
 //
 //  _JZNavigationControllerDelegate.m
-//  
+//
 //
 //  Created by Jazys on 8/29/16.
 //  Copyright © 2016 Jazys. All rights reserved.
@@ -59,13 +59,12 @@
                 navigationController.jz_interactivePopGestureRecognizerCompletion(navigationController, !context.isCancelled);
             }
         }
-     
-        navigationController.jz_navigationTransitionCompletion = NULL;
-        navigationController.jz_operation = UINavigationControllerOperationNone;
         
         if (navigationController.jz_navigationTransitionCompletion) {
             navigationController.jz_navigationTransitionCompletion(navigationController, true);
+            navigationController.jz_navigationTransitionCompletion = NULL;
         }
+        navigationController.jz_operation = UINavigationControllerOperationNone;
     }];
     
     if (![navigationController.delegate isEqual:navigationController.jz_navigationDelegate]) {
