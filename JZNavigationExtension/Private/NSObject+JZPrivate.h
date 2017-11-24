@@ -11,8 +11,8 @@ typedef void(^DeallocBlock)(void);
 
 @interface NSObject (JZPrivate)
 
-- (void)addDeallocTask:(DeallocBlock)task forTarget:(id)target key:(NSString *)key;
+- (void)jz_addDeallocTask:(DeallocBlock)task forTarget:(id)target key:(NSString *)key;
 
-- (void)removeDeallocTaskForTarget:(id)target key:(NSString *)key;
+- (void)jz_removeDeallocTaskForTarget:(id)target key:(NSString *)key;
 
 @end

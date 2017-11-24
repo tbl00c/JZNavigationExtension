@@ -118,11 +118,11 @@ static const char kTask = '0';
     return task;
 }
 
-- (void)addDeallocTask:(DeallocBlock)task forTarget:(id)target key:(NSString *)key {
+- (void)jz_addDeallocTask:(DeallocBlock)task forTarget:(id)target key:(NSString *)key {
     [self.deallocTask addTask:task forTarget:target key:key];
 }
 
-- (void)removeDeallocTaskForTarget:(id)target key:(NSString *)key {
+- (void)jz_removeDeallocTaskForTarget:(id)target key:(NSString *)key {
     [self.deallocTask removeTaskForTarget:target key:key];
 }
 

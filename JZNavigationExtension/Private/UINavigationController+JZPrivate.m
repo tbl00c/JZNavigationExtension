@@ -61,7 +61,7 @@ __attribute__((constructor)) static void JZ_Inject(void) {
         [delegate addObserver:self forKeyPath:_JZNavigationDelegatingTrigger options:NSKeyValueObservingOptionNew context:_cmd];
         __weak typeof(self) weakSelf = self;
         __weak typeof(delegate) weakDelegate = delegate;
-        [delegate addDeallocTask:^{
+        [delegate jz_addDeallocTask:^{
             [weakDelegate removeObserver:weakSelf forKeyPath:_JZNavigationDelegatingTrigger context:_cmd];
         } forTarget:self key:@"1"];
         
