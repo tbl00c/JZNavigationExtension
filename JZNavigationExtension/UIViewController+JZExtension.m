@@ -37,6 +37,20 @@
     return visable;
 }
 
+- (BOOL)jz_navigationBarVisableWithNavigationController:(UINavigationController *)navigationController {
+    id visableNumber = objc_getAssociatedObject(self, @selector(jz_wantsNavigationBarVisible));
+    if (visableNumber) {
+        return [visableNumber boolValue];
+    }
+    
+    visableNumber = objc_getAssociatedObject(navigationController, @selector(jz_wantsNavigationBarVisible));
+    if (visableNumber) {
+        return [visableNumber boolValue];
+    }
+    
+    return !navigationController.isNavigationBarHidden;
+}
+
 #pragma mark - # navbar背景透明度
 - (void)setJz_navigationBarBackgroundAlpha:(CGFloat)jz_navigationBarBackgroundAlpha {
     [self.navigationController setJz_navigationBarBackgroundAlpha:jz_navigationBarBackgroundAlpha];
@@ -74,3 +88,4 @@
 }
 
 @end
+

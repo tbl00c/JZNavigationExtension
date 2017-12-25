@@ -13,7 +13,25 @@
 #import "_JZValue.h"
 #import <objc/runtime.h>
 
+@interface _JZNavigationDelegating ()
+
+@property (nonatomic, copy) dispatch_block_t actionsPerformInDealloc;
+
+@end
+
 @implementation _JZNavigationDelegating
+
+- (void)dealloc {
+    !self.actionsPerformInDealloc ?: self.actionsPerformInDealloc();
+}
+
+- (instancetype)initWithActionsPerformInDealloc:(dispatch_block_t)actionsPerformInDealloc {
+    self = [super init];
+    if (self) {
+        self.actionsPerformInDealloc = actionsPerformInDealloc;
+    }
+    return self;
+}
 
 - (instancetype)initWithNavigationController:(UINavigationController *)navigationController {
     if (self = [super init]) {
@@ -23,7 +41,7 @@
 }
 
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
-    BOOL wantsNavbarVisible = viewController.jz_wantsNavigationBarVisible;
+    BOOL wantsNavbarVisible = [viewController jz_navigationBarVisableWithNavigationController:navigationController];
     UIColor *tintColor = viewController.jz_navigationBarTintColor;
     CGFloat bgAlpha = viewController.jz_navigationBarBackgroundAlpha;
     
@@ -40,7 +58,7 @@
         navigationController.jz_isPushing = NO;
         if (context.initiallyInteractive) {
             UIViewController *adjustViewController = navigationController.visibleViewController;
-            BOOL adjust_wantsNavbarVisible = adjustViewController.jz_wantsNavigationBarVisible;
+            BOOL adjust_wantsNavbarVisible = [adjustViewController jz_navigationBarVisableWithNavigationController:navigationController];
             UIColor *adjust_tintColor = adjustViewController.jz_navigationBarTintColor;
             CGFloat adjust_bgAlpha = adjustViewController.jz_navigationBarBackgroundAlpha;
             if (context.isCancelled) {
@@ -100,3 +118,5 @@
 }
 
 @end
+
+

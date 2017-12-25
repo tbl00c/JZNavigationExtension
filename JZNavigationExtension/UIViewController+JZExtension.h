@@ -36,4 +36,7 @@
 - (void)jz_setNavigationBarBackgroundHidden:(BOOL)jz_navigationBarBackgroundHidden animated:(BOOL)animated NS_AVAILABLE_IOS(8_0);
 
 
+- (BOOL)jz_navigationBarVisableWithNavigationController:(UINavigationController *)navigationController;
+
 @end
+

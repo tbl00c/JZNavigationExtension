@@ -14,4 +14,7 @@
 
 - (instancetype)initWithNavigationController:(UINavigationController *)navigationController;
 
+- (instancetype)initWithActionsPerformInDealloc:(dispatch_block_t)actionsPerformInDealloc;
+
 @end
+

@@ -10,7 +10,6 @@
 #import "UINavigationController+JZExtension.h"
 #import "_JZNavigationDelegating.h"
 #import <objc/runtime.h>
-#import "NSObject+JZPrivate.h"
 
 @implementation UINavigationController (JZPrivate)
 
@@ -37,7 +36,7 @@ __attribute__((constructor)) static void JZ_Inject(void) {
 #pragma mark - # Methods Swizzling
 - (void)jz_viewDidLoad {
     //    NSAssert(!self.delegate, @"Set delegate should be invoked when viewDidLoad");
-    self.delegate = nil;
+    self.delegate = self.delegate;
     [self.interactivePopGestureRecognizer setValue:@NO forKey:@"canPanVertically"];
     self.interactivePopGestureRecognizer.delegate = self.jz_navigationDelegate;
     [self jz_viewDidLoad];
@@ -50,20 +49,28 @@ __attribute__((constructor)) static void JZ_Inject(void) {
     }
     
     static NSString *_JZNavigationDelegatingTrigger = @"_JZNavigationDelegatingTrigger";
-    if (![self.delegate isEqual:self.jz_navigationDelegate]) {
-        [(NSObject *)self.delegate removeObserver:self forKeyPath:_JZNavigationDelegatingTrigger context:_cmd];
-    }
     
+    if (![self.delegate isEqual:self.jz_navigationDelegate]) {
+        objc_setAssociatedObject(self.delegate, _cmd, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        @try {
+            [(NSObject *)self.delegate removeObserver:self.delegate forKeyPath:_JZNavigationDelegatingTrigger context:_cmd]; }
+        @catch (NSException *exception) {
+        }
+    }
     if (!delegate) {
         delegate = self.jz_navigationDelegate;
     } else {
         NSAssert([delegate isKindOfClass:[NSObject class]], @"Must inherit form NSObject!");
-        [delegate addObserver:self forKeyPath:_JZNavigationDelegatingTrigger options:NSKeyValueObservingOptionNew context:_cmd];
-        __weak typeof(self) weakSelf = self;
-        __weak typeof(delegate) weakDelegate = delegate;
-        [delegate jz_addDeallocTask:^{
-            [weakDelegate removeObserver:weakSelf forKeyPath:_JZNavigationDelegatingTrigger context:_cmd];
-        } forTarget:self key:@"1"];
+        
+        [delegate addObserver:delegate forKeyPath:_JZNavigationDelegatingTrigger options:NSKeyValueObservingOptionNew context:_cmd];
+        
+        __unsafe_unretained typeof(delegate) unretained_delegate = delegate;
+        objc_setAssociatedObject(delegate, _cmd, [[_JZNavigationDelegating alloc] initWithActionsPerformInDealloc:^{
+            @try {
+                [unretained_delegate removeObserver:unretained_delegate forKeyPath:_JZNavigationDelegatingTrigger context:_cmd]; }
+            @catch (NSException *exception) {
+            }
+        }], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         
         void (^jz_add_replace_method)(id, SEL, IMP) = ^(id object, SEL sel, IMP imp) {
             Method method = class_getInstanceMethod([_JZNavigationDelegating class], sel);
